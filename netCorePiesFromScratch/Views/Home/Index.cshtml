@@ -1,7 +1,7 @@
-﻿@model IEnumerable<netCorePiesFromScratch.Models.Pie>
+﻿@model netCorePiesFromScratch.ViewModels.HomeViewModel
 
-<h2>@ViewBag.Title</h2>
-@foreach (var pie in Model)
+<h2>@Model.Title</h2>
+@foreach (var pie in Model.Pies)
 {
     <div>
         <h2>@pie.Name</h2>

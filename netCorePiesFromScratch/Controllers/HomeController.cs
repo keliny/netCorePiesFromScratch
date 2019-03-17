@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using netCorePiesFromScratch.Models;
+using netCorePiesFromScratch.ViewModels;
 using System.Linq;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -18,11 +19,16 @@ namespace netCorePiesFromScratch.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            ViewBag.Title = "Pies overview page!";
 
             var pies = _pieRepository.GetAllPies().OrderBy(p => p.Name);
 
-            return View(pies);
+            var homeViewModel = new HomeViewModel()
+            {
+                Title = "Welcome to the Pie shop!",
+                Pies = pies.ToList()
+            };
+
+            return View(homeViewModel);
         }
     }
 }
