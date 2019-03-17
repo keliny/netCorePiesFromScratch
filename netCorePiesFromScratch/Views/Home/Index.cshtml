@@ -1,0 +1,10 @@
+﻿@model IEnumerable<netCorePiesFromScratch.Models.Pie>
+
+<h2>@ViewBag.Title</h2>
+@foreach (var pie in Model)
+{
+    <div>
+        <h2>@pie.Name</h2>
+        <h2>@pie.Price.ToString("c")</h2>
+    </div>
+}
