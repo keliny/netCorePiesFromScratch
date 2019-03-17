@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
+using netCorePiesFromScratch.Models;
+using System;
 
 namespace netCorePiesFromScratch
 {
@@ -15,6 +11,24 @@ namespace netCorePiesFromScratch
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
+
+//            var host = CreateWebHostBuilder(args).Build();
+//
+//            using (var scope = host.Services.CreateScope())
+//            {
+//                var services = scope.ServiceProvider;
+//                try
+//                {
+//                    var context = services.GetRequiredService<AppDbContext>();
+//                    DbInitializer.Seed(context);
+//                }
+//                catch (Exception e)
+//                {
+//                    Console.WriteLine(e);
+//                    // logging possibility....
+//                }
+//            }
+                
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

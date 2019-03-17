@@ -3,7 +3,7 @@
 @foreach (var pie in Model.Pies)
 {
     <div class="col-sm-4 col-lg-4">
-        <div class="img-thumbnail">
+        <div class="img-thumbnail thumbnail-margin">
             <img class="img-fluid" src="@pie.ImageThumbnailUrl" />
             <div class="py-2">
                 <h3 class="float-right">@pie.Price.ToString("c")</h3>
