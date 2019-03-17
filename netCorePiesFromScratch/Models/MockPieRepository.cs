@@ -3,6 +3,7 @@ using System.Linq;
 
 namespace netCorePiesFromScratch.Models
 {
+    // Obsolete, used for creating mock repository without EF core
     public class MockPieRepository : IPieRepository
     {
         private List<Pie> _pies;
