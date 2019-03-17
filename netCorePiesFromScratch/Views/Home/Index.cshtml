@@ -1,10 +1,17 @@
 ﻿@model netCorePiesFromScratch.ViewModels.HomeViewModel
 
-<h2>@Model.Title</h2>
 @foreach (var pie in Model.Pies)
 {
-    <div>
-        <h2>@pie.Name</h2>
-        <h2>@pie.Price.ToString("c")</h2>
+    <div class="col-sm-4 col-lg-4">
+        <div class="img-thumbnail">
+            <img src="@pie.ImageThumbnailUrl" />
+            <div class="py-2">
+                <h3 class="float-right">@pie.Price.ToString("c")</h3>
+                <h3>
+                    @pie.Name
+                </h3>
+                <p>@pie.ShortDescription</p>
+            </div>
+        </div>
     </div>
 }
