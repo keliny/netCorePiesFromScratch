@@ -3,17 +3,30 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" href="content/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/content/site.css" />
     <title>@Model.Title</title>
 </head>
 <body>
-    <div class="container body-content">
-        <div class="row">
-            @RenderBody()
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" asp-controller="Home" asp-action="Index">Pie shop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a asp-controller="Home" asp-action="Index" class="nav-item nav-link">Pie shop</a>
+            </div>
         </div>
     </div>
-    @RenderSection("Scripts", required: false)
+</nav>
+<div class="container body-content">
+    <div class="row">
+        @RenderBody()
+    </div>
+</div>
+@RenderSection("Scripts", required: false)
 </body>
 
 </html>

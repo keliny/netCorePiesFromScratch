@@ -8,9 +8,14 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 20px;
 }
 
 .thumbnail-margin {
     margin-bottom: 15px;
     margin-top: 15px;
+}
+
+.img-full {
+    width: 100%;
 }

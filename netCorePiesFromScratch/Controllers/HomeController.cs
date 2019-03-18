@@ -36,7 +36,13 @@ namespace netCorePiesFromScratch.Controllers
             var pie = _pieRepository.GetPieById(id);
             if (pie == null)
                 return NotFound();
-            return View(pie);
+
+            var DetailViewModel = new DetailViewModel()
+            {
+                Title = pie.Name,
+                Pie = pie
+            };
+            return View(DetailViewModel);
         }
     }
 }
