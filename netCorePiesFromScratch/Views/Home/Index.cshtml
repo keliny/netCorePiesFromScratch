@@ -1,4 +1,4 @@
-﻿@model netCorePiesFromScratch.ViewModels.HomeViewModel
+﻿@model HomeViewModel
 
 @foreach (var pie in Model.Pies)
 {
@@ -8,7 +8,7 @@
             <div class="py-2">
                 <h3 class="float-right">@pie.Price.ToString("c")</h3>
                 <h3>
-                    @pie.Name
+                    <a asp-controller="Home" asp-action="Details" asp-route-id="@pie.Id">@pie.Name</a>
                 </h3>
                 <p>@pie.ShortDescription</p>
             </div>

@@ -11,6 +11,7 @@ namespace netCorePiesFromScratch.Models
         public PieRepository(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
+            DbInitializer.Seed(appDbContext);
         }
 
         public IEnumerable<Pie> GetAllPies()
